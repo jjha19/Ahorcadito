@@ -24,26 +24,36 @@ public class EntradaSalida {
     public void mostrarListaElementos(){
         List<Elemento> lista = servicio.getListaElementos();
         for (int i = 0; i < lista.size(); i++) {
-            System.out.println("Elemento "+ i+ ":"+ lista.get(i));
+            System.out.println("Elemento " + i + ":" + lista.get(i));
         }
     }
     public static void mostrarListaElementos(GestionElementos ge){
         List<Elemento> lista = ge.getListaElementos();
         for (int i = 0; i < lista.size(); i++) {
-            System.out.print("Elemento "+ i+ ":"+ lista.get(i));
+            System.out.print("Elemento " + i + ":" + lista.get(i));
         }
     }
     public static Elemento insertarElemento(){
         Scanner lector = new Scanner(System.in);
-        System.out.println(Constantes.INSERTAR);
-        String id = lector.nextLine();
-        String palabra = lector.nextLine();
-        try {
-            Comprobaciones.comprobarPalabra(palabra);
-        } catch (ExcepcionCaracterEspecial e) {
-            System.out.println(e.getMessage());
-        }
-        String categoria = lector.nextLine();
+        String id;
+        String palabra;
+        String categoria;
+        boolean erroneo;
+        do {
+            erroneo = false;
+            System.out.println(Constantes.INSERTAR);
+            id = lector.nextLine();
+            palabra = lector.nextLine();
+            categoria = lector.nextLine();
+            try {
+                Comprobaciones.comprobarPalabra(palabra);
+                Comprobaciones.comprobarPalabra(categoria);
+            } catch (ExcepcionCaracterEspecial e) {
+                System.out.println(e.getMessage());
+                erroneo = true;
+            }
+        }while (erroneo);
+
         return new Elemento(id,palabra,categoria);
     }
 

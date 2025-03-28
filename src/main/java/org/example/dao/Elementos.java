@@ -15,9 +15,11 @@ public class Elementos {
     public Elementos(){
         this.listaElementos = new ArrayList<Elemento>();
         //for y crear para cada categoria unos cuantos elementos
-        /*for (int i = 0; i < 5; i++) {
+        /*
+        for (int i = 0; i < 5; i++) {
             listaElementos.add(new Elemento());
-        }*/
+        }
+        */
         Random random = new Random();
         String categoria = "movies";
         for (int i = 0; i < 5; i++) {

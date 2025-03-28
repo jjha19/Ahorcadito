@@ -10,8 +10,9 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(Constantes.BIENVENIDA);
         GestionElementos ge = new GestionElementosImplementacion();
+        System.out.println(Constantes.OPCIONESROL + Constantes.MENU);
+
         System.out.println(ge.getListaElementos());
-        EntradaSalida.mostrarListaElementos(ge);
         ge.insertarElemento(EntradaSalida.insertarElemento());
     }
 }

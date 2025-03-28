@@ -17,7 +17,7 @@ public class DaoElementosImplementacion implements DaoElementos {
 
     @Override
     public boolean isEmptyElementosList() {
-        return false;
+        return lista.getListaElementos().isEmpty();
     }
 
     @Override

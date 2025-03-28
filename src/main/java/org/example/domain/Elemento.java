@@ -23,6 +23,9 @@ public class Elemento {
 
     }
 
+
+    //Getters y setters
+
     public String getId() {
         return id;
     }
