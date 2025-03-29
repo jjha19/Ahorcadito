@@ -11,7 +11,7 @@ public class Main {
         System.out.println(Constantes.BIENVENIDA);
         GestionElementos ge = new GestionElementosImplementacion();
         System.out.println(Constantes.OPCIONESROL + Constantes.MENU);
-
+        EntradaSalida.lectorDeOpcionesNumericas();
         System.out.println(ge.getListaElementos());
         ge.insertarElemento(EntradaSalida.insertarElemento());
     }

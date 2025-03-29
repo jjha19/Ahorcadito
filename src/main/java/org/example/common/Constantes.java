@@ -28,4 +28,5 @@ public class Constantes {
                  -  Bienvenido al juego del Ahorcado  -
             """;
     public static final String INSERTAR = "Introduzca id, palabra, categoria (Al insertar cada valor aprete INTRO)";
+    public static final String DENEGADO = "Contraseña incorrecta. Acceso Denegado";
 }

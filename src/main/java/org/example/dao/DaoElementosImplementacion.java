@@ -2,6 +2,10 @@ package org.example.dao;
 
 import org.example.domain.Elemento;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
 
 public class DaoElementosImplementacion implements DaoElementos {
@@ -64,5 +68,20 @@ public class DaoElementosImplementacion implements DaoElementos {
     @Override
     public boolean eliminarElemento(int id) {
         return false;
+    }
+
+    public void cambiarContraseña(){}
+    public boolean compararConContraseña(String input){
+        boolean acceso = false;
+        String archivoContraseña = "Contraseña.txt";
+        try (BufferedReader br = new BufferedReader(new FileReader(archivoContraseña))) {
+            String linea = br.readLine();
+            if (linea == null || input.equals(linea)) {
+               acceso = true;
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());;
+        }
+        return acceso;
     }
 }

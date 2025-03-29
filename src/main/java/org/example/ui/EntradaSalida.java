@@ -56,5 +56,20 @@ public class EntradaSalida {
 
         return new Elemento(id,palabra,categoria);
     }
+    public static int lectorDeOpcionesNumericas(){
+        Scanner lector = new Scanner(System.in);
+        int opcion = -1;
+        do {
+            try {
+                opcion = lector.nextInt();
+                lector.nextLine();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }while (opcion == -1);
+        lector.close();
+        return opcion;
+    }
+
 
 }
