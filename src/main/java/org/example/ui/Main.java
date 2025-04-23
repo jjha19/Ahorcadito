@@ -1,6 +1,7 @@
 package org.example.ui;
 
 import org.example.common.Constantes;
+import org.example.domain.Juego;
 import org.example.service.GestionElementos;
 import org.example.service.GestionElementosImplementacion;
 
@@ -10,9 +11,13 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(Constantes.BIENVENIDA);
         GestionElementos ge = new GestionElementosImplementacion();
-        System.out.println(Constantes.OPCIONESROL + Constantes.MENU);
-        EntradaSalida.lectorDeOpcionesNumericas();
-        System.out.println(ge.getListaElementos());
-        ge.insertarElemento(EntradaSalida.insertarElemento());
+        int rol = EntradaSalida.eleccionRol();
+        if (rol == 1) {
+            Juego jg = new Juego();
+        } else if (rol == 2) {
+
+        }
+
+
     }
 }

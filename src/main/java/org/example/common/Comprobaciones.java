@@ -1,5 +1,10 @@
 package org.example.common;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.Scanner;
+
 public class Comprobaciones {
     public static void comprobarPalabra(String palabra) throws ExcepcionCaracterEspecial {
         palabra = palabra.toUpperCase();
@@ -10,5 +15,29 @@ public class Comprobaciones {
                         + palabra.charAt(i) + "\nNo se guardarán los cambios" );
             }
         }
+    }
+
+    public static boolean comprobarContraseña(){
+        boolean acceso = false;
+        Scanner sc = new Scanner(System.in);
+        File contraseña = new File("Contraseña.txt");
+        System.out.println(Constantes.SOLICITUD);
+        String intento = sc.nextLine();
+        sc.close();
+        try {
+            FileReader fr = new FileReader(contraseña);
+            BufferedReader br = new BufferedReader(fr);
+            String linea = br.readLine();
+            if (linea != null) {
+                if (linea.equals(intento)) {
+                    System.out.println(Constantes.PERMITIDO);
+                    acceso = true;
+                }else System.out.println(Constantes.DENEGADO);
+            }else System.out.println(Constantes.VACIO);
+
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return acceso;
     }
 }
