@@ -32,4 +32,14 @@ public class Constantes {
     public static final String VACIO = "El archivo está vacío. Por favor introduzca una contraseña nueva";
     public static final String DENEGADO = "Contraseña incorrecta. Acceso Denegado";
     public static final String PERMITIDO = "Contraseña correcta. Acceso Permitido";
+
+    // Constantes de la partida
+    public static final String ELECCIONPARTIDA = "¿Quieres comenzar una partida nueva o continuar la anterior? \n1. Partida Nueva \n2. Cargar partida anterior";
+    public static final String FORMATOERRONEO = "El formato de respuesta dado no corresponde al esperado. Intenta de nuevo";
+    public static final String ELECCIONCATEGORIA = "Elige una categoría";
+    public static final String CATEGORIANOENCONTRADA = "Categoría no encontrada";
+    public static final String LISTAVACIA = "No hay elementos de esa categoría";
+    public static final String ELECCIONDIFICULTAD = "Elige una Dificultad";
+    public static final String ESCRIBIRLETRA = "Escribe una Letra";
+    public static final String JUEGOTERMINADO = "Juego terminado";
 }

@@ -1,5 +1,7 @@
 package org.example.common;
 
+import org.example.dao.Elementos;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -39,5 +41,15 @@ public class Comprobaciones {
             System.out.println(e.getMessage());
         }
         return acceso;
+    }
+
+    public static boolean comprobarCategoría(String categoria, Elementos e){
+        boolean encontrado = false;
+        for (int i = 0; i < e.getListaElementos().size(); i++) {
+            if (categoria.equals(e.getListaElementos().get(i).getCategoria())) {
+                encontrado = true;
+            }else encontrado = false;
+        }
+        return encontrado;
     }
 }

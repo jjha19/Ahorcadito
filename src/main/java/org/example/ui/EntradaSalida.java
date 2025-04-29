@@ -58,17 +58,31 @@ public class EntradaSalida {
     }
     public static int lectorDeOpcionesNumericas(){
         Scanner lector = new Scanner(System.in);
-        int opcion = -1;
+        boolean valido = false;
+        int opcion = 0;
         do {
             try {
                 opcion = lector.nextInt();
                 lector.nextLine();
+                valido = true;
             } catch (Exception e) {
-                System.out.println(e.getMessage());
+                System.out.println(Constantes.FORMATOERRONEO);
             }
-        }while (opcion == -1);
+        }while (!valido);
         lector.close();
         return opcion;
+    }
+
+    public static char lectorChars (){
+        Scanner lector = new Scanner(System.in);
+        char c = ' ';
+        try {
+            c = lector.next().charAt(0);
+            lector.nextLine();
+        }catch (Exception e){
+            System.out.println(Constantes.FORMATOERRONEO);
+        }
+        return c;
     }
 
     public static int eleccionRol (){
