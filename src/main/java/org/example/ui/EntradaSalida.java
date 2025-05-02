@@ -67,9 +67,9 @@ public class EntradaSalida {
                 valido = true;
             } catch (Exception e) {
                 System.out.println(Constantes.FORMATOERRONEO);
+                lector.nextLine();
             }
         }while (!valido);
-        lector.close();
         return opcion;
     }
 
@@ -100,8 +100,8 @@ public class EntradaSalida {
                     }
                     break;
             }
-            return rol;
-        }while (rol != 0);
+        }while (rol == 0);
+        return rol;
     }
 
 

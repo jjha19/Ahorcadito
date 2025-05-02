@@ -45,19 +45,19 @@ public class Juego {
 
                 char[] palabraAdiv = new char[palabra.length()];
                 for (int i = 0; i < palabra.length(); i++) {
-                    if (palabra.charAt(i) == ' '){
+                    if (palabra.charAt(i) == ' ') {
                         palabraAdiv[i] = palabra.charAt(i);
                     }
                 }
                 do {
                     for (int i = 0; i < palabraAdiv.length; i++) {
-                        try{
+                        try {
                             System.out.print(palabraAdiv[i]);
-                        }catch (NullPointerException e){
+                        } catch (NullPointerException e) {
                             System.out.print("＿");
                         }
                     }
-                    System.out.println(Constantes.ESCRIBIRLETRA);
+                    System.out.println("\n" + Constantes.ESCRIBIRLETRA);
                     letraAdiv = EntradaSalida.lectorChars();
 
                     for (int i = 0; i < palabraAdiv.length; i++) {
@@ -68,10 +68,129 @@ public class Juego {
                         }
                     }
 
-                    if (palabraAdiv.toString().equals(palabra)){adivinada = true;}
+                    if (palabraAdiv.toString().equals(palabra)) {
+                        adivinada = true;
+                    }
+
                 } while (errores < 7 || !adivinada);
+                dibujarAhorcado(errores);
                 System.out.println(Constantes.JUEGOTERMINADO);
-            }else System.out.println(Constantes.LISTAVACIA);
-        } else System.out.println(Constantes.CATEGORIANOENCONTRADA); ;
+            } else System.out.println(Constantes.LISTAVACIA);
+        } else System.out.println(Constantes.CATEGORIANOENCONTRADA);
+
+    }
+    public void dibujarAhorcado(int errores){
+        switch (errores) {
+            case -3:
+                System.out.println("""
+                                    
+                                     
+                                           
+                                    
+                                          
+                                    |
+                                    """);
+                break;
+            case -2:
+                System.out.println("""
+                                    
+                                           
+                                           
+                                    |
+                                    |      
+                                    |
+                                    """);
+                break;
+            case -1:
+                System.out.println("""
+                                    |
+                                    |       
+                                    |       
+                                    |
+                                    |      
+                                    |
+                                    """);
+                break;
+            case 0:
+                System.out.println("""
+                                    |--------
+                                    |       
+                                    |       
+                                    |
+                                    |      
+                                    |
+                                    """);
+                break;
+            case 1:
+                System.out.println("""
+                                    |--------
+                                    |       |
+                                    |       
+                                    |
+                                    |      
+                                    |
+                                    """);
+                break;
+            case 2:
+                System.out.println("""
+                                    |--------
+                                    |       |
+                                    |       O
+                                    |
+                                    |      
+                                    |
+                                    """);
+                break;
+            case 3:
+                System.out.println("""
+                                    |--------
+                                    |       |
+                                    |       O
+                                    |       |
+                                    |      
+                                    |
+                                    """);
+                break;
+            case 4:
+                System.out.println("""
+                                    |--------
+                                    |       |
+                                    |       O
+                                    |      /|
+                                    |      
+                                    |
+                                    """);
+                break;
+            case 5:
+                System.out.println("""
+                                    |--------
+                                    |       |
+                                    |       O
+                                    |      /|\
+                                    |      
+                                    |
+                                    """);
+                break;
+            case 6:
+                System.out.println("""
+                                    |--------
+                                    |       |
+                                    |       O
+                                    |      /|\
+                                    |      / 
+                                    |
+                                    """);
+                break;
+            case 7:
+                System.out.println("""
+                                    |--------
+                                    |       |
+                                    |       O
+                                    |      /|\
+                                    |      / \
+                                    |
+                                    """);
+                break;
+        }
     }
 }

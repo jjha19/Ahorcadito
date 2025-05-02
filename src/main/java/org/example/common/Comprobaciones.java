@@ -48,7 +48,7 @@ public class Comprobaciones {
         for (int i = 0; i < e.getListaElementos().size(); i++) {
             if (categoria.equals(e.getListaElementos().get(i).getCategoria())) {
                 encontrado = true;
-            }else encontrado = false;
+            }
         }
         return encontrado;
     }

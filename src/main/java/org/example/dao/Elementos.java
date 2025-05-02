@@ -25,7 +25,7 @@ public class Elementos {
         Random random = new Random();
         String categoria = "movies";
         for (int i = 0; i < 5; i++) {
-            listaElementos.add(new Elemento());
+            listaElementos.add(new Elemento(String.valueOf(random.nextInt(100)), new Faker().movie().name(), categoria));
         }
         categoria = "personajesTheBigBangTheory";
         for (int i = 0; i < 5; i++) {

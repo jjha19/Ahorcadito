@@ -39,7 +39,7 @@ public class Constantes {
     public static final String ELECCIONCATEGORIA = "Elige una categoría";
     public static final String CATEGORIANOENCONTRADA = "Categoría no encontrada";
     public static final String LISTAVACIA = "No hay elementos de esa categoría";
-    public static final String ELECCIONDIFICULTAD = "Elige una Dificultad";
+    public static final String ELECCIONDIFICULTAD = "Elige una Dificultad: \n 1- Facil      2- Normal      3- Difícil";
     public static final String ESCRIBIRLETRA = "Escribe una Letra";
     public static final String JUEGOTERMINADO = "Juego terminado";
 }
